@@ -416,14 +416,14 @@ public class PreviewTask extends AppCompatActivity{
                     else{
                         switch (buffer[buffer.length-1]){
                             case (byte)SEND_FRAME:
-                                byte[] frame = new byte[buffer.length-2];
+                                byte[] frame = new byte[buffer.length-1];
                                 for(int i=0;i<frame.length;i++){
                                     frame[i] = buffer[i];
                                 }
                                 mHandler.obtainMessage(SEND_FRAME,bytes,-1,frame).sendToTarget();
                                 break;
                             case (byte)SEND_PICTURE:
-                                byte[] picture = new byte[buffer.length-2];
+                                byte[] picture = new byte[buffer.length-1];
                                 for(int i=0;i<picture.length;i++){
                                     picture[i] = buffer[i];
                                 }
